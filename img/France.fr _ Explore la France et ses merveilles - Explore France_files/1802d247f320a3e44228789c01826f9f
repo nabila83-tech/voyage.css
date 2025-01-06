@@ -1,0 +1,73 @@
+(function (d, w) {
+  var script, config, container, style;
+  var embedUuid = '1802d247f320a3e44228789c01826f9f';
+
+  function mergeDeep(target, source) {
+    if (typeof target == "object" && typeof source == "object") {
+      for (var key in source) {
+        if (source[key] === null && (target[key] === undefined || target[key] === null)) {
+          target[key] = null;
+        } else if (source[key] instanceof Array) {
+          target[key] = source[key];
+        } else if (typeof source[key] == "object" && source[key] !== null) {
+          if (!target[key]) target[key] = {};
+          mergeDeep(target[key], source[key]);
+        } else {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  }
+
+  function merge(target, source) {
+    return mergeDeep(mergeDeep({}, target), source);
+  }
+
+  w.flcklr = w.flcklr || {};
+
+  w._flocklerEditVersion = null;
+
+  w._flocklerOverride = w._flocklerOverride || {};
+  w.flcklr.EmbedConfigs = w.flcklr.EmbedConfigs || {};
+  w.flcklr.EmbedConfigs[embedUuid] = merge({"embedUuid":"1802d247f320a3e44228789c01826f9f","embedVersion":"v3","container":"flockler-embed-1802d247f320a3e44228789c01826f9f","section":[59195],"site":11604,"style":"wall_v2","count":9,"defaultCss":true,"defaultJs":true,"extra":{"wall_share_buttons":false,"wall_timestamps":false,"popup":false,"hide_caption":true},"loadMoreText":false,"refresh":0,"showMoreText":false,"showProfile":false}, w._flocklerOverride[embedUuid]);
+
+    w.flcklr.EmbedConfigsV3 = w.flcklr.EmbedConfigsV3 || {};
+    w.flcklr.EmbedConfigsV3[embedUuid] = {"embedUuid":"1802d247f320a3e44228789c01826f9f","embedVersion":"v3","siteUuid":"17209631fa1079c626d16e8ad390bede","configuration":{"count":9,"locale":"fr","filters":{"filterBySectionIds":[59195],"filterByTags":[],"filterByChannels":[],"tagFilterType":"any","filterByProductIds":[],"filterByProductCategoryIds":[],"filterByProductFeedIds":[],"filterByFallbacks":null},"localizations":{"relativeTime":{"seconds":{"singular":"Il y a # s","plural":"Il y a # s"},"minutes":{"singular":"Il y a # min","plural":"Il y a # min"},"hours":{"singular":"Il y a # h","plural":"Il y a # h"},"days":{"singular":"Il y a # j","plural":"Il y a # j"},"weeks":{"singular":"Il y a # sem","plural":"Il y a # sem"},"months":{"singular":"Il y a # m.","plural":"Il y a # m."},"years":{"singular":"Il y a # a","plural":"Il y a # a"}},"actions":{"buyNow":"Acheter maintenant","next":"Suivant","previous":"Précédent","tapToPlay":"Appuyer pour jouer","viewProducts":"Voir les produits","showMore":"Montre plus…","loadMorePosts":"Charger plus","showNewerPosts":"Afficher les nouveaux messages"},"help":{"noAltText":"Aucune description de photo disponible.","playVideo":"Lire la vidéo","anonymous":"Anonymous","recommends":"Recommande %{page_name}","doesNotRecommend":"Ne recommande pas %{page_name}","seeOriginalPost":"Voir la publication d'origine","seePostOn":"Consulter la publication d'origine sur %{channel}","seeProfileOf":"Consulter la page de profil de %{user}","profilePictureOf":"Photo de profil de %{user}","openInPopupView":"Open in popup view","opensInANewWindow":"Ouvre dans une nouvelle fenêtre","readMoreNotice":"(enlarge visible text above – no impact for screenreader users)"},"postLabels":{"facebook":"Une publication Facebook","flickr":"Une publication Flickr","flockler":"Une publication","fromUser":"de %{user}","google_review":"Avis Google","instagram":"Une publication Instagram","linkedin":"Une publication LinkedIn","pinterest":"Une publication Pinterest","reddit":"Une publication  Reddit","review":"Review","rss":"Une publication du flux RSS","soundcloud":"Une publication de SoundCloud","tiktok":"Une publication TikTok","twitter":"Une publication Twitter","video":"Une publication vidéo","vimeo":"Une vidéo Vimeo","youtube":"Une vidéo YouTube"},"stats":{"commentsLabelSingular":"%{count} commentaire","commentsLabelPlural":"%{count} commentaires","likesLabelSingular":"%{count} mention j'aime","likesLabelPlural":"%{count} mentions j'aime","retweetsLabelSingular":"%{count} retweet","retweetsLabelPlural":"%{count} retweets","facebookLikeReactionsSingular":"personne a réagi avec J’aime","facebookLikeReactionsPlural":"personnes ont réagi avec J’aime","facebookLoveReactionsSingular":"personne a réagi avec J’adore","facebookLoveReactionsPlural":"personnes ont réagi avec J’adore","facebookHahaReactionsSingular":"personne a réagi avec Haha","facebookHahaReactionsPlural":"personnes ont réagi avec Haha","facebookWowReactionsSingular":"personne a réagi avec Wouah","facebookWowReactionsPlural":"personnes ont réagi avec Wouah","facebookSadReactionsSingular":"personne a réagi avec Triste","facebookSadReactionsPlural":"personnes ont réagi avec Triste","facebookAngryReactionsSingular":"personne a réagi avec Grrr","facebookAngryReactionsPlural":"personnes ont réagi avec Grrr"}},"theme":{"name":"wall_v2","elements":{"profileDetails":false,"captions":false,"publishedAt":false,"publishedAtFormat":"dd MMM yyyy","stats":{"likeCount":null,"commentCount":null,"retweetCount":null},"products":true},"features":{"popup":false,"infiniteScroll":false,"randomize":false,"autoRefresh":{"type":"none","intervalInSeconds":0},"animation":{"type":"none","intervalInSeconds":0},"emojiFallback":false,"embedScreen":false},"text":{"loadMoreText":false,"showMoreText":false},"customization":{"css":"#flockler-embed-1802d247f320a3e44228789c01826f9f img.flockler-wall_v2-item__media__img{object-fit:cover;height:100%}#flockler-embed-1802d247f320a3e44228789c01826f9f .flockler-wall_v2-item__media{aspect-ratio:1 / 1;display:block;position:relative}\n","ctaLink":{"defaultText":null,"backgroundColor":null,"textColor":null,"icon":null,"utmSource":null,"utmMedium":null,"utmCampaign":null}}}}};
+
+
+    style = d.createElement('style');
+    style.setAttribute('data-flockler-embed-id', embedUuid);
+    style.textContent = '';
+    style.textContent += "#flockler-embed-1802d247f320a3e44228789c01826f9f img.flockler-wall_v2-item__media__img{object-fit:cover;height:100%}#flockler-embed-1802d247f320a3e44228789c01826f9f .flockler-wall_v2-item__media{aspect-ratio:1 / 1;display:block;position:relative}\n";
+    style.textContent += '#flockler-embed-1802d247f320a3e44228789c01826f9f { --fl-preview-background:#ffffff;--fl-item-background:#ffffff;--fl-text-color:#111111;--fl-link-color:#111111;--fl-link-color-hover:#1771e0 }';
+
+    document.head.insertAdjacentElement('beforeend', style);
+
+    container = d.getElementById('flockler-embed-' + embedUuid);
+    if (!container) return;
+
+      if (w.flcklr && w.flcklr.Embeds && w.flcklr.Embeds.versions && w.flcklr.Embeds.versions.v3 && w.flcklr.Embeds.versions.v3['__wall_v2']) {
+        w.flcklr.Embeds.create(w.flcklr.EmbedConfigs[embedUuid]);
+        return;
+      }
+
+      w.flcklr.EmbedsToAutoload = w.flcklr.EmbedsToAutoload || [];
+      w.flcklr.EmbedsToAutoload.push({ embedUuid: embedUuid });
+
+    if (!(w.flcklr.embedJsV3HasBeenAddedToDOM || {})['wall_v2']) {
+      script = d.createElement('script');
+        script.async = true;
+
+        script.src = "https://plugins.flockler.com/embed/v3/embed-wall_v2.js";
+
+
+      (d.head || d.body).insertAdjacentElement('beforeend', script);
+      w.flcklr.embedJsV3HasBeenAddedToDOM = w.flcklr.embedJsV3HasBeenAddedToDOM || {};
+      w.flcklr.embedJsV3HasBeenAddedToDOM['wall_v2'] = true;
+
+      if ( console && console.log ) {
+        console.log('🟦 Social Plugin powered by Flockler — Learn more at flockler.com');
+      }
+    }
+})(document, window);
